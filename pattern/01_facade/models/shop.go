@@ -11,14 +11,16 @@ type Shop struct {
 	Products []Product 
 }
 
+// Функция Sell, которая и является нашим Фасадом. 
+// Здесь происходит взаимодействие между банком, картой, магазином и пользователем.
 func (s Shop) Sell(user User, product string) error {
-	fmt.Println("[Магазин] ЗАпрос к пользователю, для получения остатка по карте")
+	fmt.Println("[Магазин] Запрос к пользователю, для получения остатка по карте")
 	time.Sleep(time.Millisecond * 500)
 	err := user.Card.CheckBalance()
 	if err != nil {
 		return err
 	}
-	fmt.Printf("[Магазиг] Проверка - может ли %s купить товар \n", user.Name)
+	fmt.Printf("[Магазин] Проверка - может ли %s купить товар \n", user.Name)
 	time.Sleep(time.Millisecond * 500)
 	for _, p := range s.Products {
 		if p.Name != product {

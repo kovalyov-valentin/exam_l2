@@ -6,11 +6,13 @@ import (
 	"time"
 )
 
+// Струкртура банка
 type Bank struct {
 	Name string 
 	Cards []Card
 }
 
+// Функция проверки баланса на стороне банка
 func (b Bank) CheckBalance(cardNumber string) error {
 	fmt.Printf("[Банк] Получение остатка по карте: %s", cardNumber)
 	time.Sleep(time.Millisecond * 500)

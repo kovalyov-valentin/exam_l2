@@ -6,9 +6,10 @@ import (
 	"github.com/kovalyov-valentin/exam_l2/pattern/01_facade/models"
 )
 
+// Вместо конструктора накидал все в переменные, просто для упрощения. 
 var (
 	bank = models.Bank{
-		Name:  "ВечноЗеленый Банс",
+		Name:  "ВечноЗеленый Банк",
 		Cards: []models.Card{},
 	}
 	card1 = models.Card{
@@ -22,20 +23,20 @@ var (
 		Bank:    &bank,
 	}
 	user1 = models.User{
-		Name: "Consumer1",
+		Name: "Вася",
 		Card: &card1,
 	}
 	user2 = models.User{
-		Name: "Consumer2",
+		Name: "Петя",
 		Card: &card2,
 	}
 
 	product = models.Product{
-		Name:  "Cheese",
+		Name:  "Сырки Б.Ю.Александров",
 		Price: 150,
 	}
 	shop = models.Shop{
-		Name:     "Fixprice",
+		Name:     "Шестерочка",
 		Products: []models.Product{
 			product,
 		},
